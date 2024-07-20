@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jean Pierre - Portfólio</title>
+    <style>
+        /* Estilos gerais para ocupar toda a largura da tela */
+        body {
+            margin: 0;
+            padding-top: 70px; /* Adicione uma margem superior para evitar sobreposição com a barra de navegação fixa */
+            font-family: 'Arial', sans-serif;
+            background-color: #000000; /* Fundo escuro */
+            color: #fff; /* Texto branco */
+        }
+
+        .container {
+            max-width: 100%;
+            padding: 0 20px; /* Adicione algum espaçamento lateral, se desejar */
+            margin: 0 auto;
+        }
+
+        /* Estilos para centralizar a barra de navegação */
+        .navbar {
+            text-align: center;
+            background-color: #000; /* Cor de fundo preta */
+            color: #fff; /* Cor do texto branco */
+            padding: 1em 0; /* Adiciona algum espaço interno */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000; /* Garante que a barra de navegação esteja acima de outros elementos */
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar li {
+            display: inline;
+            margin-right: 15px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 0.5em;
+            cursor: pointer; /* Adicione um cursor apontando para indicar que os itens são clicáveis */
+        }
+
+        /* Adicione estilos específicos para as seções */
+        .section {
+            display: none; /* Esconde todas as seções por padrão */
+            padding-top: 70px; /* Ajusta a posição da seção em relação à barra de navegação fixa */
+        }
+
+        #apresentacao {
+            display: block; /* Exibe a seção de apresentação por padrão */
+        }
+
+        /* Adicione estilos específicos para a imagem e texto */
+        #apresentacao {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 150px; /* Ajuste o espaçamento superior conforme necessário */
+            padding-bottom: 50px; /* Ajuste o espaçamento inferior conforme necessário */
+        }
+
+        #apresentacao img {
+            max-width: 40%; /* Ajuste o tamanho da imagem conforme necessário */
+            border-radius: 40px; /* Adicione borda arredondada à imagem, se desejar */
+        }
+
+        #apresentacao-texto {
+            max-width: 90%; /* Ajuste o tamanho do texto conforme necessário */
+        }
+
+        /* Adicione estilos específicos para a seção de Projetos */
+        #projetos {
+            text-align: center; /* Centraliza o texto dentro da seção */
+            padding: 50px 0; /* Adiciona algum espaço interno */
+        }
+
+        #projetos h2 {
+            font-size: 2em; /* Ajusta o tamanho da fonte para o cabeçalho */
+            margin-bottom: 20px; /* Adiciona espaço na parte inferior do cabeçalho */
+        }
+
+        #projetos p {
+            font-size: 1.2em; /* Ajusta o tamanho da fonte para o texto */
+            max-width: 900px; /* Define a largura máxima do texto para melhor legibilidade */
+            margin: 0 auto; /* Centraliza o texto dentro da largura máxima */
+        }
+
+        .projeto {
+            margin-bottom: 20px; /* Adiciona espaço entre os projetos */
+        }
+
+        .projeto a {
+            color: #1e90ff; /* Cor dos links */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Adicione estilos específicos para a seção de Diplomas e Certificados */
+        #diplomas-certificados {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        #diplomas-certificados h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #diplomas-certificados p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Adicione estilos específicos para a seção de Linguagens de Programação */
+        #linguagens {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        #linguagens h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #linguagens p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Adicione estilos específicos para a seção de Contato */
+        #contato {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+        #contato h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        #contato p {
+            font-size: 1.2em;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Barra de Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="#" onclick="showSection('apresentacao')">Apresentação</a></li>
+                <li><a href="#" onclick="showSection('projetos')">Projetos</a></li>
+                <li><a href="#" onclick="showSection('diplomas-certificados')">Diplomas e Certificados</a></li>
+                <li><a href="#" onclick="showSection('linguagens')">Linguagens de Programação</a></li>
+                <li><a href="#" onclick="showSection('contato')">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Seção de Apresentação -->
+    <section id="apresentacao" class="container section active">
+        <div id="apresentacao-texto">
+            <h2>Olá! Meu nome é Jean Pierre</h2>
+            <p>Desenvolvedor Web Front End</p>
+            <p>Olá! Eu sou Jean Pierre, um brasileiro de 20 anos que mora no Fundão. Atualmente, estou fazendo o curso de programação na Escola Profissional do Fundão, me especializando em Front End. Como iniciante, estou trabalhando para desenvolver minhas habilidades e criar projetos interessantes.</p>
+        </div>
+        <img src="https://img.freepik.com/fotos-gratis/um-menino-olhando-para-a-lua-no-meio-da-noite_1340-38945.jpg?size=626&ext=jpg&ga=GA1.2.940403810.1704558582&semt=sph" alt="Foto de Jean Pierre" style="order: 2;">
+    </section>
+
+    <!-- Seção de Projetos -->
+    <section id="projetos" class="section">
+        <div class="container">
+            <h2>Projetos</h2>
+            <p>Abaixo estão alguns dos projetos que desenvolvi:</p>
+            <br>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto1" target="_blank">Projeto 1: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto2" target="_blank">Projeto 2: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto3" target="_blank">Projeto 3: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto4" target="_blank">Projeto 4: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto5" target="_blank">Projeto 5: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto6" target="_blank">Projeto 6: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto7" target="_blank">Projeto 7: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto8" target="_blank">Projeto 8: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto9" target="_blank">Projeto 9: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto10" target="_blank">Projeto 10: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto11" target="_blank">Projeto 11: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto12" target="_blank">Projeto 12: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto13" target="_blank">Projeto 13: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto14" target="_blank">Projeto 14: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto15" target="_blank">Projeto 15: Nome do Projeto</a>
+            </div>
+            <div class="projeto">
+                <a href="https://github.com/antunes478/projeto16" target="_blank">Projeto 16: Nome do Projeto</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="diplomas-certificados" class="section">
+        <div class="container">
+            <h2>Diplomas e Certificados</h2>
+            <p>Atualmente, estou trabalhando na obtenção de meu diploma em Desenvolvimento Web pela Escola Profissional do Fundão.</p>
+            <br>
+            <p>Além disso, tenho concluído diversos cursos online que contribuíram para o aprimoramento das minhas habilidades.</p>
+        </div>
+    </section>
+
+    <!-- Seção de Linguagens de Programação -->
+    <section id="linguagens" class="section">
+        <div class="container">
+            <h2>Linguagens de Programação que Uso</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>Python</li>
+            </ul>
+        </div>
+    </section>
+    <!-- Seção de Contato -->
+    <section id="contato" class="section">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Gmail: <a href="mailto:portuga0462016@gmail.com">portuga0462016@gmail.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/937363715" target="_blank">937363715</a></p>
+            <p>GitHub: <a href="https://github.com/antunes478" target="_blank">antunes478</a></p>
+        </div>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            // Esconde todas as seções
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+
+            // Mostra a seção selecionada
+            document.getElementById(sectionId).style.display = 'block';
+
+            // Adiciona a classe 'active' ao link clicado
+            var links = document.getElementsByTagName('a');
+            for (var i = 0; i < links.length; i++) {
+                links[i].classList.remove('active');
+            }
+
+            // Adiciona a classe 'active' ao link clicado
+            document.querySelector(`a[href="#${sectionId}"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
